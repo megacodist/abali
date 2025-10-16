@@ -1,0 +1,28 @@
+[
+    {
+        "title": "Getting Started",
+        "url": "/notes/getting-started/"
+    },
+    {
+        "title": "Core Concepts",
+        "children": [
+            {
+                "title": "Atoms and Molecules",
+                "url": "/notes/atoms-and-molecules/"
+            },
+            {
+                "title": "The Grand Theory",
+                "children": [
+                    {
+                        "title": "The Grand Theory - Part 1",
+                        "url": "/notes/the-grand-theory-part-1/"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Advanced Topics",
+        "url": "/notes/advanced-topics/"
+    }
+]

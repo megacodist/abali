@@ -1,3 +1,13 @@
-_site/
-node_modules/
-.cache
+# Ignoring OS-related files & folders...
+/**/.DS_Store
+
+# Ignoring tools specific files & folders...
+/.qodo/
+/.obsidian/
+/.vscode/
+/.github/
+
+# Ignoring Eleventy starter files & folders...
+/node_modules/
+/_site/
+/.cache

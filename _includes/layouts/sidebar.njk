@@ -1,0 +1,9 @@
+{# _includes/layouts/sidebar.njk #}
+{% from "macros/navigation.njk" import renderHierarchy %}
+
+<aside class="sidebar">
+  <nav aria-label="Primary">
+    {# `hierarchy` is the global variable from _data/hierarchy.json #}
+    {{ renderHierarchy(hierarchy) }}
+  </nav>
+</aside>

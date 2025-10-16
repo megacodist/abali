@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    // Tells the type checker to use modern JavaScript features
+    "target": "ES2022",
+    // Tells it how you handle modules (CommonJS in your case)
+    "module": "NodeNext",
+    // This is the most important line. It turns on type checking for all .js files.
+    "checkJs": true,
+    // Enable all strict type-checking options. This is the "brutal honesty" mode.
+    "strict": true,
+  },
+  // Tells the type checker which files to include in its analysis
+  "include": [
+    "./**/*.js",
+    "./**/*.cjs"
+  ],
+  // Tells it to ignore the giant folder of third-party code
+  "exclude": [
+    "node_modules",
+    "_site"
+  ]
+}

@@ -1,0 +1,14 @@
+{# _includes/macros/navigation.njk #}
+{% macro renderHierarchy(items) %}
+<ul>
+  {% for item in items %}
+    {# You might want to add logic here to highlight the current page #}
+    <li>
+      <a href="{{ item.url | url }}">{{ item.title }}</a>
+      {% if item.children %}
+        {{ renderHierarchy(item.children) }} {# Recursion! #}
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
+{% endmacro %}
