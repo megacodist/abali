@@ -76,7 +76,7 @@ const config = {
         respectPrefersColorScheme: true,
       },
       tableOfContents: {
-        minHeadingLevel: 1,
+        minHeadingLevel: 2,
         maxHeadingLevel: 6,
       },
       navbar: {
