@@ -1,5 +1,6 @@
 ---
 title: Stream Functions
+hide_title: true
 status: Draft
 ---
 # Stream Functions: Lazy Generation

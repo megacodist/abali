@@ -4,9 +4,26 @@ This website is built using [Docusaurus](https://docusaurus.io/), a modern stati
 
 ## Installation
 
-```bash
-yarn
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/megacodist/abali.git
+   ```
+
+1. Update `npm`:
+    ```bash
+    npm update -g npm
+    ```
+
+2. Install or update to the lastest version of `yarn`:
+    ```bash
+    yarn global add yarn@latest
+   ```
+
+3. Install dependencies:
+    ```bash
+    yarn install
+    ```
+
 
 ## Local Development
 
@@ -14,7 +31,7 @@ yarn
 yarn start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+This command starts a local development server, opens up a browser window and is accessible at `localhost:3000`. Most changes are reflected live without having to restart the server.
 
 ## Build
 

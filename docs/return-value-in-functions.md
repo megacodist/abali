@@ -11,7 +11,9 @@ In AlgoDraft, the `FUNCTION` keyword is used to define all reusable blocks of 
 3. **Returning Multiple Values:** Often, a single computation logically produces several related results (e.g., finding both a minimum and maximum value, calculating a result and an associated error code). The `FUNCTION` syntax supports mechanisms to handle this need, allowing multiple pieces of information to be effectively communicated back to the caller. We will explore the specific techniques for achieving this – namely, returning structured data types and using parameters with specific directionality (OUT, INOUT) – in later sections.
 
 The following sections will detail how to define the parameters a FUNCTION accepts, how to invoke (call) these routines, and delve deeper into the mechanisms for returning single or multiple values.
+
 # Procedures: no return value
+
 A procedure is a routine that primarily performs actions or causes side effects (like printing to the screen, modifying a file, updating a global variable), or modifying an `OUT`/`INOUT` argument. It doesn't return a computed value back to the caller. To define a procedure, simply omit the `[RETURNS DataType]` part.
 
 It is forbidden to return a value in a procedure using `RETURN $value` but it is possible to employ `RETURN` to exit the procedure any time.
@@ -34,6 +36,7 @@ ENDFUNCTION // No RETURNS clause
 ```
 
 # Functions with only one return value
+
 A function is a routine whose primary purpose is to compute a value and return it to the caller. The name "function" and invocation syntax is inspired by mathematics.
 
 To define a function, you must include the `RETURNS ReturnType` part, specifying the type of the value that will be returned. Inside the function's body, the flow of execution must always reach to a `RETURN` statement followed by the value (or an expression) compatible with `ReturnType` in declaration to send the result back.
@@ -55,6 +58,7 @@ ENDFUNCTION
 ```
 
 # Functions with multiple return values
+
 Sometimes, a computation needs to produce more than one result (e.g., finding both the minimum and maximum value, performing an operation and returning a result plus a status code). AlgoDraft supports two primary methods for achieving this:
 
 ## Method 1: Returning a Single Structured Data Type
