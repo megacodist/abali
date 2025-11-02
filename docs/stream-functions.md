@@ -1,9 +1,7 @@
 ---
 title: Stream Functions
-hide_title: true
 status: Draft
 ---
-# Stream Functions: Lazy Generation
 
 In AlgoDraft, a **Stream Function** is a special type of function defined using the `STREAM` keyword. Unlike regular functions that compute a result and return it all at once, a Stream Function describes a process that can generate a sequence of values on demand, one value at a time, without needing to produce or store the entire sequence upfront. This concept is known as **lazy generation**.
 

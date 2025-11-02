@@ -2,12 +2,14 @@
 title: Date and Time Basic Types
 status: Planned
 ---
+
 # Date
 
 **Syntax**:
 
 ```
-CLASS Date IMPLEMENTS IComparable
+CLASS Date IMPLEMENTS IComparable :=
+ENDCLASS
 ```
 
 # Time
@@ -15,7 +17,8 @@ CLASS Date IMPLEMENTS IComparable
 **Syntax**:
 
 ```
-CLASS Time IMPLEMENTS IComparable
+CLASS Time IMPLEMENTS IComparable :=
+ENDCLASS
 ```
 
 # DateTime
@@ -23,7 +26,13 @@ CLASS Time IMPLEMENTS IComparable
 **Syntax**:
 
 ```
-CLASS DateTime IMPLEMENTS IComparable
+CLASS DateTime IMPLEMENTS IComparable :=
+ENDCLASS
 ```
 
-TimeZone
+## TimeZone
+
+```
+CLASS TimeZone IMPLEMENTS IComparable :=
+ENDCLASS
+```

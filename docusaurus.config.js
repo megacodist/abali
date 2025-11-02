@@ -51,6 +51,16 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          // Remark plugins to run BFORE Docusaurus' default remark plugins:
+          beforeDefaultRemarkPlugins: [
+            require('./scripts/remark-demote-headings') // path relative to config file
+          ],
+
+          // Remark plugins to run AFTER Docusaurus' default remark plugins:
+          remarkPlugins: [
+            // other remark plugins here (optional)
+          ],
+
           routeBasePath: '/',
 
           sidebarPath: './sidebars.js',

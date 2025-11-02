@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "prebuild": "copyfiles -f LICENSE docs/",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
@@ -24,7 +25,9 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.9.2",
-    "@docusaurus/types": "3.9.2"
+    "@docusaurus/types": "3.9.2",
+    "copyfiles": "^2.4.1",
+    "unist-util-visit": "^5.0.0"
   },
   "browserslist": {
     "production": [
