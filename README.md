@@ -14,10 +14,11 @@ This website is built using [Docusaurus](https://docusaurus.io/), a modern stati
     npm update -g npm
     ```
 
-2. Install or update to the lastest version of `yarn`:
+2. Update `yarn`:
+
     ```bash
-    yarn global add yarn@latest
-   ```
+    yarn set version stable
+    ```
 
 3. Install dependencies:
     ```bash

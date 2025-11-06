@@ -1,15 +1,16 @@
-# Dependencies
+# Ignoring dependencies
 node_modules/
 
-# Production
+# Ignoring the production folder
 build/
 
-# Generated files
-.docusaurus
+# Ignoring cache files & folders
 .cache-loader
 
-# Tools
+# Ignoring tools
+.docusaurus/
 .qodo/
+.yarn/
 
 # Misc
 .DS_Store

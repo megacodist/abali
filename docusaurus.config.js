@@ -102,6 +102,22 @@ const config = {
             position: 'left',
           },
           {
+            type: 'dropdown',
+            label: 'Download',
+            position: 'right',
+            items: [
+              {
+                label: 'Markdown (ZIP)',
+                href: '#',
+                target: '_blank',
+              },
+              {
+                label: 'ZIP',
+                href: '#'
+              }
+            ],
+          },
+          {
             href: 'https://github.com/megacodist/abali',
             label: 'GitHub',
             position: 'right',
