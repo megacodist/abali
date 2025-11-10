@@ -2,34 +2,51 @@
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
-## Installation
+# Local Run
+
+## Clone the repo
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/megacodist/abali.git
+
+   ```terminal
+   git clone https://github.com/megacodist/abali.git abali
    ```
 
+   This creates `abali` folder in the current folder and clones the remote repository into it.
+
+## Configure the development environment
+
 1. Update `npm`:
-    ```bash
+
+    ```terminal
     npm update -g npm
     ```
 
-2. Update `yarn`:
+3. Enable `corepack`: In Windows, you may need to use an elevated (administrator) terminal.
 
-    ```bash
-    yarn set version stable
+    ```terminal
+    corepack enable
     ```
 
-3. Install dependencies:
-    ```bash
-    yarn install
+3. Prepare the package manager: This step is highly recommended.
+
+    ```terminal
+    corepack prepare yarn@4.11.0 --activate
+    ```
+
+4. Install dependencies:
+
+    ```terminal
+    yarn install --immutable
     ```
 
 
-## Local Development
+## Run the Development Server
 
-```bash
-yarn start
+In the build command in Cloudflare Pages, write this:
+
+```terminal
+corepack enable && corepack prepare yarn@4.11.0 --activate && yarn install --immutable && yarn build
 ```
 
 This command starts a local development server, opens up a browser window and is accessible at `localhost:3000`. Most changes are reflected live without having to restart the server.
@@ -40,9 +57,9 @@ This command starts a local development server, opens up a browser window and is
 yarn build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+This command generates static content into the `build/` directory and can be served using any static contents hosting service. It is highly recommended to run this command locally to fix errors before Cloudflare Pages reports them.
 
-## Deployment
+# Deployment
 
 Using SSH:
 
@@ -78,3 +95,35 @@ This repository utilizes a dual-branch strategy to separate development from the
 **Summary:**
 *   **Developers and Contributors:** Work on the `main` branch.
 *   **Readers:** See the content deployed from the `publish` branch.
+
+# Make a "reproducible" Git commit
+
+1. **Run `yarn install` (without `--immutable`)**
+
+    Lets Yarn freely update `yarn.lock` and any internal files under `.yarn/` (e.g. `.yarn/install-state.gz` or `.yarn/plugins`).
+
+    This captures the current dependency graph for your project and locks exact versions.
+
+    👉 Result: you get the most up-to-date, internally consistent dependency snapshot.
+
+2. **Stage & commit all files Yarn modified**
+
+    Typical ones include:
+
+    * `yarn.lock`
+    * `.yarn/install-state.gz`
+    * `.yarn/plugins/*`
+    * `.yarn/patches/*`
+
+    (You usually don’t commit `.yarn/cache/` unless you want a “zero-install” repo.)
+
+    👉 Result: anyone cloning the repo (or CI) will have exactly the same dependency map and Yarn metadata.
+
+3. **Verify with `yarn install --immutable`**
+
+    This command refuses to change `yarn.lock` or any required Yarn files.
+
+    If it finishes without error, your committed state is reproducible:
+    every environment using the same Node + Yarn version will resolve identical packages.
+
+    👉 Result: deterministic installs for you, collaborators, and CI (Cloudflare Pages in your case).

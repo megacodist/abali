@@ -50,7 +50,7 @@ ENDSTREAM
 
 - **`PARAMS ... ENDPARAMS`**: The parameters to declare input parameters, similar to regular functions. These parameters are available within the stream function's body.
 	
-	- Only `IN` [Parameter Directionality](#parameter-directionality-in-out-inout) is permitted for parameters defined within a stream's `PARAMS` block. The multi-stage, suspend/resume nature of streams makes the semantics of `OUT` and `INOUT` parameters (which typically relate to the single completion state of a routine) complex and counter-intuitive in this context. Inputs configure the stream's generation process; outputs are exclusively handled via `YIELD`.
+	- Only `IN` [Parameter Directionality](function-parameters#parameter-directionality-in-out-inout) is permitted for parameters defined within a stream's `PARAMS` block. The multi-stage, suspend/resume nature of streams makes the semantics of `OUT` and `INOUT` parameters (which typically relate to the single completion state of a routine) complex and counter-intuitive in this context. Inputs configure the stream's generation process; outputs are exclusively handled via `YIELD`.
 	
 	- If the stream function does not take any parameter, this block must be removed completely.
 

@@ -1,5 +1,5 @@
 {
-  "name": "abali-2",
+  "name": "abali",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -44,5 +44,5 @@
   "engines": {
     "node": ">=20.0"
   },
-  "packageManager": "yarn@4.10.3"
+  "packageManager": "yarn@4.11.0"
 }

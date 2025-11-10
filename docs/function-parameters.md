@@ -109,11 +109,13 @@ ENDFUNCTION
 If the caller does not provide an argument corresponding to `$port` or `$timeout` when calling Connect, the function will automatically use `8080` for `$port` and `5000` for `$timeout` internally.
 
 Default-valued parameters significantly increase the flexibility of your functions, allowing them to handle common cases with less explicit input from the caller.
+
 # Parameter Directionality (`IN`, `OUT`, `INOUT`)
 
 A crucial aspect of defining function parameters in AlgoDraft is specifying their **directionality**. This explicitly declares the intended direction of data flow for that parameter between the caller and the function, forming a clear contract. This is optional and defaults to `IN`.
 
 This approach is vital for designing algorithms because it makes the intent and potential side effects of a function call immediately clear from its signature.
+
 ## `IN` Directionality
 
 - **Purpose:** Specifies that the parameter is used solely to pass input data **into** the function. It is the default directionality of parameters in AlgoDraft.
